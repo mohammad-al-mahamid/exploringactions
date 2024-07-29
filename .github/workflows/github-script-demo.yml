@@ -3,6 +3,9 @@ name: Testing Github-Script
 on:
   workflow_dispatch:
 
+permissions:
+  issues: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -24,4 +27,4 @@ jobs:
             return "Some return data!";
 
       - name: Get result
-        run: echo "${{steps.create-comment.outputs.result}}"    
+        run: echo "${{steps.create-comment.outputs.result}}"
